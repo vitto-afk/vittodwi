@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Register and Dashboard Dosen</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f8f8;
+        }
+
+        /* Styles for the login/register form */
+        .container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            max-width: 300px;
+            width: 100%;
+            margin: auto;
+            display: none; /* Initially hidden */
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+
+        .form-group button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background-color: #28a745;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .toggle-link {
+            display: block;
+            text-align: center;
+            margin-top: 15px;
+            color: #007bff;
+            cursor: pointer;
+        }
+
+        /* Styles for the dashboard */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+
+        .header .user-info {
+            font-weight: bold;
+            font-size: 1.5em;
+        }
+
+        .header .controls select,
+        .header .controls button {
+            margin-left: 10px;
+            padding: 5px;
+            font-size: 1em;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .sidebar {
+            width: 20%;
+            float: left;
+            background-color: #e0e0e0;
+            height: calc(100vh - 60px);
+            padding-top: 10px;
+            box-sizing: border-box;
+        }
+
+        .sidebar p {
+            padding: 15px 20px;
+            border-bottom: 1px solid #ddd;
+            margin: 0;
+            cursor: pointer;
+        }
+
+        .sidebar p:hover,
+        .sidebar p.active {
+            background-color: #ccc;
+        }
+
+        .main-content {
+            width: 75%;
+            float: right;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .prodi-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .prodi-box {
+            width: calc(33.33% - 20px);
+            background-color: #aaf2ff;
+            padding: 40px 0;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .clearfix::after {
+            content: "";
+            clear: both;
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <!-- Login/Register Form -->
+    <div class="container" id="login-form">
+        <h2>Login</h2>
+        <div class="form-group">
+            <input type="text" placeholder="Username" id="login-username">
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password" id="login-password">
+        </div>
+        <div class="form-group">
+            <button onclick="login()">Log In</button>
+        </div>
+        <span class="toggle-link" onclick="toggleForm()">Don't have an account? Register</span>
+    </div>
+
+    <div class="container" id="register-form" style="display: none;">
+        <h2>Register</h2>
+        <div class="form-group">
+            <input type="text" placeholder="Username" id="register-username">
+        </div>
+        <div class="form-group">
+            <input type="password" placeholder="Password" id="register-password">
+        </div>
+        <div class="form-group">
+            <button onclick="register()">Sign Up</button>
+        </div>
+        <span class="toggle-link" onclick="toggleForm()">Already have an account? Login</span>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboard" style="display: none;">
+        <div class="header">
+            <div class="user-info">
+                <span class="role">DOSEN</span>
+            </div>
+            <div class="controls">
+                <select>
+                    <option value="2024">Tahun Ajaran</option>
+                    <!-- Add other options as needed -->
+                </select>
+                <select>
+                    <option value="ganjil">Ganjil</option>
+                    <option value="genap">Genap</option>
+                </select>
+                <button onclick="logout()">LOGOUT</button>
+            </div>
+        </div>
+        <div class="clearfix">
+            <div class="sidebar">
+                <p class="active">BERANDA</p>
+                <p>REKAPITUASI NILAI</p>
+                <p>PRESENSI</p>
+                <p>TUGAS</p>
+                <p>RESPONSI</p>
+                <p>UTS</p>
+                <p>UAS</p>
+                <p>TAMBAH DATA</p>
+                <p>BIMBINGAN</p>
+            </div>
+            <div class="main-content">
+                <div class="prodi-container">
+                    <div class="prodi-box">teknik informatika</div>
+                    <div class="prodi-box">manajemen informatika</div>
+                    <div class="prodi-box">ilmu komunikasi</div>
+                    <div class="prodi-box">informatika</div>
+                    <div class="prodi-box">teknologi informasi</div>
+                    <div class="prodi-box">akutansi</div>
+                    <div class="prodi-box">arsitektur</div>
+                    <div class="prodi-box">geogafi</div>
+                    <div class="prodi-box">perencanaan wilayah dan kota</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm() {
+            const loginForm = document.getElementById('login-form');
+            const registerForm = document.getElementById('register-form');
+
+            if (loginForm.style.display === "none") {
+                loginForm.style.display = "block";
+                registerForm.style.display = "none";
+            } else {
+                loginForm.style.display = "none";
+                registerForm.style.display = "block";
+            }
+        }
+
+        function login() {
+            const username = document.getElementById('login-username').value;
+            const password = document.getElementById('login-password').value;
+
+            // Here you would typically validate the login credentials
+            // For demonstration, we will just hide the login form and show the dashboard
+            if (username && password) { // Simple check
+                document.getElementById('login-form').style.display = 'none';
+                document.getElementById('register-form').style.display = 'none';
+                document.getElementById('dashboard').style.display = 'block';
+            } else {
+                alert('Please enter valid credentials!');
+            }
+        }
+
+        function register() {
+            const username = document.getElementById('register-username').value;
+            const password = document.getElementById('register-password').value;
+            // Implement your registration logic here
+            console.log(`Registering with Username: ${username}, Password: ${password}`);
+            alert('Registration logic not implemented yet.');
+        }
+
+        function logout() {
+            // Reset the form and show the login form again
+            document.getElementById('dashboard').style.display = 'none';
+            document.getElementById('login-form').style.display = 'block';
+        }
+
+        // Show the login form by default
+        document.getElementById('login-form').style.display = 'block';
+    </script>
+</body>
+</html>

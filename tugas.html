@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            margin: 0;
+            height: 100vh;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            font-size: 18px;
+            margin: 0 0 20px 0;
+        }
+        .sidebar ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .sidebar ul li {
+            margin: 10px 0;
+        }
+        .sidebar ul li a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 10px;
+            border-radius: 4px;
+        }
+        .sidebar ul li a:hover, .sidebar ul li a.active {
+            background-color: #ddd;
+        }
+        .content {
+            flex-grow: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header button {
+            background-color: #ccc;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        .filters {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .filters select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .table-container {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            flex-grow: 1;
+        }
+        .table-container th, .table-container td {
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .table-container td.placeholder {
+            font-size: 48px;
+            color: #ccc;
+        }
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .footer button, .footer input {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .footer button {
+            background-color: #ccc;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>DOSEN</h2>
+        <ul>
+            <li><a href="#">BERANDA</a></li>
+            <li><a href="#">Rekapitulasi Nilai</a></li>
+            <li><a href="#">Presensi</a></li>
+            <li><a href="#" class="active">Tugas</a></li>
+            <li><a href="#">Responsi</a></li>
+            <li><a href="#">UTS</a></li>
+            <li><a href="#">UAS</a></li>
+            <li><a href="#">Tambah Data</a></li>
+            <li><a href="#">Bimbingan</a></li>
+        </ul>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div></div>
+            <button>LOGOUT</button>
+        </div>
+        <div class="filters">
+            <select>
+                <option>PRODI</option>
+            </select>
+            <select>
+                <option>Pertemuan</option>
+            </select>
+            <select>
+                <option>Tugas</option>
+            </select>
+        </div>
+        <table class="table-container">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nilai</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>VITTO DWI ALFIAN</td>
+                    <td>23.01.5090</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> DWI ALFIAN</td>
+                    <td>23.01.5091</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>ALFIAN</td>
+                    <td>23.01.5092</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>EKO WIBOWO</td>
+                    <td>23.01.5093</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>UJANG</td>
+                    <td>23.01.5094</td>
+                    <td>100</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                </tr>
+            </tbody>
+        </table>
+        <div class="footer">
+            <input type="text" placeholder="NIM">
+            <input type="text" placeholder="Nilai">
+            <button>Tambah</button>
+        </div>
+    </div>
+</body>
+</html>

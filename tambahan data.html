@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+
+        .container {
+            display: flex;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #d1d1d1;
+            height: 100vh;
+            padding: 20px 0;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .sidebar h3,
+        .sidebar p {
+            margin: 0;
+            padding: 10px 20px;
+            color: #333;
+        }
+
+        .sidebar .active {
+            color: #007bff;
+        }
+
+        .content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .topbar h2 {
+            margin: 0;
+        }
+
+        .form-container {
+            max-width: 500px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .form-container h3 {
+            margin: 0 0 20px;
+        }
+
+        .form-container label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-container input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+
+        .form-container button {
+            padding: 10px 20px;
+            background: #007bff;
+            border: none;
+            border-radius: 3px;
+            color: #fff;
+            cursor: pointer;
+        }
+
+        .form-container button:hover {
+            background: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h3>DOSEN</h3>
+            <p>BERANDA</p>
+            <p>Rekapitulasi Nilai</p>
+            <p>PRESENSI</p>
+            <p>TUGAS</p>
+            <p>RESPONSI</p>
+            <p>UTS</p>
+            <p>UAS</p>
+            <p class="active">TAMBAH DATA</p>
+            <p>BIMBINGAN</p>
+        </div>
+        <div class="content">
+            <div class="topbar">
+                <h2>TAMBAHAN DATA</h2>
+                <button>LOGOUT</button>
+            </div>
+            <div class="form-container">
+                <label for="nama">NAMA</label>
+                <input type="text" id="nama" name="nama">
+                <label for="nim">NIM</label>
+                <input type="text" id="nim" name="nim">
+                <label for="prodi">PRODI</label>
+                <input type="text" id="prodi" name="prodi">
+                <button>SAVE</button>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

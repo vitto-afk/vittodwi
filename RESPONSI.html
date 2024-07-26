@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #e9e9e9;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        .sidebar .menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar .menu li {
+            margin: 20px 0;
+        }
+        .sidebar .menu li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        .sidebar .menu li a span {
+            margin-left: 10px;
+        }
+        .sidebar .menu li a:hover {
+            color: #007bff;
+        }
+        .sidebar .bottom {
+            margin-top: 20px;
+        }
+        .sidebar .bottom a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+            font-size: 16px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .header .dropdowns {
+            display: flex;
+            gap: 10px;
+        }
+        .header select, .header button {
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .header .logout {
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .table-container {
+            flex: 1;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>DOSEN</h3>
+            <p>BERANDA</p>
+            <p>REKAPITULASI NILAI</p>
+            <p>PRESENSI</p>
+            <p>TUGAS</p>
+            <p class="active">RESPONSI</p>
+            <p>UTS</p>
+            <p>UAS</p>
+            <p>TAMBAH DATA</p>
+            <p>BIMBINGAN</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="topbar">
+            <h2>RESPONSI</h2>
+        </div>
+    <div class="content">
+        <div class="header">
+            <div class="dropdowns">
+                <select>
+                    <option>Prodi</option>
+                </select>
+                <select>
+                    <option>Semester</option>
+                </select>
+                <select>
+                    <option>Responsi</option>
+                </select>
+            </div>
+            <button class="logout">LOGOUT</button>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nilai</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <!-- Additional rows as needed -->
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

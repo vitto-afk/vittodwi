@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            min-height: 100vh;
+            background-color: #f8f8f8;
+        }
+        .sidebar {
+            width: 250px;
+            background-color: #ececec;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .sidebar .header, .content .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .sidebar .header img {
+            margin-right: 10px;
+        }
+        .sidebar .menu, .sidebar .bottom {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .sidebar .menu li, .sidebar .bottom li {
+            margin: 15px 0;
+        }
+        .sidebar .menu li a, .sidebar .bottom li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .sidebar .menu li a:hover, .sidebar .bottom li a:hover {
+            color: #007bff;
+        }
+        .sidebar .menu li a span, .sidebar .bottom li a span {
+            margin-left: 10px;
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+        .content .header {
+            justify-content: space-between;
+        }
+        .content .header .title {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .content .header .logout {
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            background-color: #ececec;
+            text-decoration: none;
+            color: #333;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .table-container {
+            flex: 1;
+            margin-top: 20px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 15px;
+            border: 1px solid #ddd;
+            text-align: left;
+        }
+        th {
+            background-color: #f0f0f0;
+        }
+        .action-buttons {
+            margin-top: 10px;
+            text-align: right;
+        }
+        .action-buttons button {
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: 1px solid #ccc;
+            background-color: #ececec;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="sidebar">
+            <h3>DOSEN</h3>
+            <p>BERANDA</p>
+            <p>REKAPITULASI NILAI</p>
+            <p>PRESENSI</p>
+            <p>TUGAS</p>
+            <p>RESPONSI</p>
+            <p>UTS</p>
+            <p>UAS</p>
+            <p class="active">TAMBAH DATA</p>
+            <p>BIMBINGAN</p>
+        </div>
+    </div>
+    <div class="content">
+        <div class="header">
+            <div class="title">UTS</div>
+            <a href="#" class="logout">LOGOUT</a>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nilai</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>23.01.5090</td>
+                    <td>90</td>
+                </tr>
+                <!-- Additional rows as needed -->
+            </table>
+            <div class="action-buttons">
+                <button>Edit</button>
+                <button>Save</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

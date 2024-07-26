@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+        .sidebar {
+            width: 200px;
+            background-color: #d1d1d1;
+            padding: 15px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+            height: 100vh;
+            position: fixed;
+        }
+        .content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header .title {
+            font-size: 24px;
+        }
+        .header .logout {
+            background-color: #ccc;
+            padding: 10px 15px;
+            text-decoration: none;
+            color: #333;
+            border-radius: 5px;
+        }
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+        .menu li {
+            margin: 15px 0;
+        }
+        .menu li a {
+            text-decoration: none;
+            color: #333;
+            display: flex;
+            align-items: center;
+        }
+        .menu li a:hover {
+            color: #007bff;
+        }
+        .menu li a span {
+            margin-left: 10px;
+        }
+        .table-container {
+            margin-top: 20px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: #fff;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+        th {
+            background-color: #f2fa84;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="sidebar">
+        <div class="header">
+            <div class="title">DOSEN</div>
+        </div>
+        <ul class="menu">
+            <li><a href="#"><span>Rekapitulasi Nilai</span></a></li>
+            <li><a href="#"><span>Presensi</span></a></li>
+            <li><a href="#"><span>Tugas</span></a></li>
+            <li><a href="#"><span>Responsi</span></a></li>
+            <li><a href="#"><span>UTS</span></a></li>
+            <li><a href="#"><span>UAS</span></a></li>
+            <li><a href="#"><span>Tambah Data</span></a></li>
+            <li><a href="#"><span>Bimbingan</span></a></li>
+        </ul>
+    </div>
+
+    <div class="content">
+        <div class="header">
+            <div class="title">REKAPITULASI NILAI</div>
+            <a href="#" class="logout">LOGOUT</a>
+        </div>
+        <div class="table-container">
+            <table>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Nilai</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>VITTO DWI ALFIAN</td>
+                    <td>23.01.5090</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td> DWI ALFIAN</td>
+                    <td>23.01.5091</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>ALFIAN</td>
+                    <td>23.01.5092</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>4</td>
+                    <td>EKO WIBOWO</td>
+                    <td>23.01.5093</td>
+                    <td>100</td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>UJANG</td>
+                    <td>23.01.5094</td>
+                    <td>100</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
